@@ -24,7 +24,7 @@ bot.onText(/\/yadambiar (.+)/, (msg,match) => {
     const hourNum = hour.split(' ')[1]
     const min = resp.split('|')[2]
     const minNum = min.split(' ')[1]
-    const msg = resp.split('|')[3]
+    const message = resp.split('|')[3]
     function getInterval(day,hour,min) {
         let interval = 0
         interval = interval + (day * 24 * 60 * 60 * 1000)
@@ -33,6 +33,8 @@ bot.onText(/\/yadambiar (.+)/, (msg,match) => {
         console.log(interval)
     }
 
-
+    setTimeout(() => {
+        bot.sendMessage(chatId, message)
+    }, getInterval(dayNum,hourNum,minNum))
 })
 
