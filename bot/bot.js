@@ -6,11 +6,12 @@ const token = process.env.TOKEN
 
 const bot = new TelegramBot(token, {polling: true})
 
-bot.onText(/\/echo (.+)/, (msg, match) => {
-    const chatId = msg.chat.id // in bakhsh payam karbar ro moshakhas mikone
-    const resp = match[1]   // in bakhsh payam karbar ro moshakhas mikone
+
+// start message response
+bot.onText(/\/start/, (msg) => {
+    const chatId = msg.chat.id 
     
     
     
-    bot.sendMessage(chatId, resp)
+    bot.sendMessage(chatId, "سلام من قراره بهت یادآوری کنم زیاااد!")
 })
