@@ -18,6 +18,9 @@ bot.onText(/\/start/, (msg) => {
 bot.onText(/\/yadambiar (.+)/, (msg,match) => {
     const chatId = msg.chat.id
     const resp = match[1]
-    bot.sendMessage(chatId, resp)
+    const day = resp.split('|')[0]
+    const hour = resp.split('|')[1]
+    const min = resp.split('|')[2]
+    console.log(hour)
 })
 
